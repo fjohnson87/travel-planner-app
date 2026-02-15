@@ -1,0 +1,103 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 420px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+input, button {
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  min-height: 60px;
+}
+.results-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+@media (min-width: 800px) {
+  .results-grid {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+.trip-photo {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  border: 1px solid #e6e6e6;
+}
+
+.meta {
+  color: #555;
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+}
+
+.btn:hover {
+  filter: brightness(0.97);
+}
+
+.btn-danger {
+  border-color: #e5b2b2;
+  background: #fff5f5;
+}
