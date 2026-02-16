@@ -14,14 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for testing if needed later
 export { handleSubmit };
 
-// Service Worker
-if ('serviceWorker' in navigator) {
+// Service Worker (only in production)
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/service-worker.js')
-      .then((reg) => console.log(' SW registered:', reg.scope))
-      .catch((err) => console.error(' SW registration failed:', err));
+      .then((reg) => console.log('SW registered:', reg.scope))
+      .catch((err) => console.error('SW registration failed:', err));
   });
-} else {
-  console.log(' Service workers not supported');
 }

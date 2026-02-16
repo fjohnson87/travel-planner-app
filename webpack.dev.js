@@ -10,14 +10,22 @@ module.exports = {
     filename: 'bundle.js',
     clean: true,
   },
-  devServer: {
-    port: 3000,
-    open: true,
-    hot: true,
-    static: {
-      directory: path.resolve(__dirname, 'dist'),
-    },
+ devServer: {
+  port: 3000,
+  open: true,
+  hot: true,
+  static: {
+    directory: path.resolve(__dirname, 'dist'),
   },
+  proxy: [
+    {
+      context: ['/geonames', '/weather', '/image', '/health'],
+      target: 'http://localhost:8081',
+      changeOrigin: true,
+    },
+  ],
+},
+
   module: {
     rules: [
       {
